@@ -1,0 +1,30 @@
+$tomonlar: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+    x: inline,
+    y: block,
+);
+
+@each $key, $tomon in $tomonlar {
+    @for $i from 0 through 5 {
+        .m#{$key}-#{$i} {
+            margin-#{$tomon}: $i * 1rem;
+        }
+        .p#{$key}-#{$i} {
+            padding-#{$tomon}: $i * 1rem;
+        }
+    }
+}
+
+    @for $i from 0 through 20 {
+        .p#{$i} {
+            padding: $i * 10px;
+        }
+    }
+    @for $i from 0 through 20 {
+        .m#{$i} {
+            margin: $i * 10px;
+        }
+    }
